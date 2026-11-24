@@ -1,0 +1,1262 @@
+/* =====================================================
+   ÉCLAT PARFUMS
+   Feuille de style complète
+   Univers : Luxe, élégance et parfumerie
+===================================================== */
+
+
+/* =====================================================
+   1. VARIABLES GLOBALES
+===================================================== */
+
+:root {
+    --black: #17130f;
+    --dark: #211a14;
+    --gold: #b18a46;
+    --gold-light: #d9bc7e;
+    --ivory: #f8f5ef;
+    --cream: #eee7dc;
+    --white: #ffffff;
+    --text: #2b241e;
+    --muted: #82776b;
+    --border: #e6ded2;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: var(--ivory);
+    color: var(--text);
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    font-family: inherit;
+    cursor: pointer;
+}
+
+
+/* =====================================================
+   2. BARRE SUPERIEURE
+===================================================== */
+
+.top-bar {
+    min-height: 42px;
+    background: var(--black);
+    color: var(--white);
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    padding: 10px 4%;
+
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 16px;
+    letter-spacing: .3px;
+}
+
+.top-bar span {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.top-bar span::first-letter {
+    color: var(--gold-light);
+}
+
+
+/* =====================================================
+   3. EN-TETE ET LOGO
+===================================================== */
+
+.header {
+    min-height: 112px;
+
+    padding: 12px 5%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 30px;
+
+    background: rgba(255, 255, 255, .98);
+    border-bottom: 1px solid var(--border);
+
+    position: relative;
+    z-index: 10;
+}
+
+/* Logo typographique */
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-shrink: 0;
+}
+
+.brand-monogram {
+    width: 66px;
+    height: 66px;
+
+    border: 1px solid var(--gold);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 33px;
+    font-weight: 600;
+
+    color: var(--gold);
+
+    position: relative;
+}
+
+.brand-monogram::before {
+    content: "";
+    position: absolute;
+    inset: 5px;
+    border: 1px solid var(--gold-light);
+}
+
+.brand-name {
+    display: flex;
+    flex-direction: column;
+
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 23px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.brand-name em {
+    color: var(--gold);
+    font-style: normal;
+}
+
+.brand-name small {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 8px;
+    letter-spacing: 2.5px;
+    font-weight: 500;
+    margin-top: 5px;
+}
+
+
+/* Navigation */
+
+.navigation {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 35px;
+}
+
+.navigation a {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 21px;
+    font-weight: 600;
+
+    position: relative;
+
+    transition: color .3s ease;
+}
+
+.navigation a:hover,
+.navigation a.active {
+    color: var(--gold);
+}
+
+.navigation a::after {
+    content: "";
+
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+
+    width: 0;
+    height: 2px;
+
+    background: var(--gold);
+
+    transition: width .3s ease;
+}
+
+.navigation a:hover::after,
+.navigation a.active::after {
+    width: 100%;
+}
+
+
+/* Icônes */
+
+.header-icons {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+}
+
+.header-icons button {
+    background: transparent;
+    border: none;
+
+    font-size: 27px;
+    color: var(--black);
+
+    position: relative;
+
+    transition: color .3s ease;
+}
+
+.header-icons button:hover {
+    color: var(--gold);
+}
+
+.cart-count {
+    position: absolute;
+    top: -7px;
+    right: -9px;
+
+    width: 19px;
+    height: 19px;
+
+    border-radius: 50%;
+
+    background: var(--gold);
+    color: white;
+
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* =====================================================
+   4. BANNIERE PRINCIPALE
+===================================================== */
+
+.hero {
+    min-height: 540px;
+
+    background-image:
+        linear-gradient(
+            90deg,
+            rgba(20, 15, 12, .88) 0%,
+            rgba(35, 25, 20, .55) 38%,
+            rgba(35, 25, 20, .05) 78%
+        ),
+        url('https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?w=1800&auto=format&fit=crop&q=90');
+
+    background-size: cover;
+    background-position: center;
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    overflow: hidden;
+
+    color: white;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+
+    margin-left: 13%;
+
+    max-width: 500px;
+
+    padding: 70px 0;
+}
+
+.eyebrow {
+    color: var(--gold);
+    font-size: 11px;
+    font-weight: 600;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 18px;
+}
+
+.hero .eyebrow {
+    color: var(--gold-light);
+}
+
+.hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: clamp(65px, 8vw, 105px);
+    font-weight: 500;
+
+    line-height: .85;
+    letter-spacing: -3px;
+
+    margin-bottom: 30px;
+}
+
+.hero h1 em {
+    color: var(--gold-light);
+    font-weight: 400;
+}
+
+.hero-description {
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: 24px;
+    line-height: 1.4;
+
+    max-width: 370px;
+
+    margin-bottom: 30px;
+}
+
+
+/* Bouton doré */
+
+.gold-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 24px;
+
+    background: linear-gradient(
+        120deg,
+        #a47c36,
+        #d0ad69,
+        #9c7130
+    );
+
+    color: white;
+
+    padding: 17px 25px;
+
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1.3px;
+
+    border: 1px solid var(--gold-light);
+
+    transition: all .3s ease;
+}
+
+.gold-button span {
+    font-size: 20px;
+}
+
+.gold-button:hover {
+    transform: translateY(-3px);
+
+    box-shadow: 0 8px 22px rgba(0, 0, 0, .2);
+
+    filter: brightness(1.1);
+}
+
+
+/* Informations de bannière */
+
+.hero-caption {
+    position: absolute;
+
+    bottom: 25px;
+    left: 13%;
+    right: 13%;
+
+    display: flex;
+    justify-content: space-between;
+
+    color: rgba(255, 255, 255, .85);
+
+    font-size: 10px;
+    letter-spacing: 2px;
+
+    z-index: 2;
+}
+
+
+/* Indicateurs de bannière */
+
+.hero-dots {
+    position: absolute;
+
+    bottom: 25px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    display: flex;
+    gap: 12px;
+
+    z-index: 3;
+}
+
+.dot {
+    width: 9px;
+    height: 9px;
+
+    border-radius: 50%;
+
+    background: white;
+}
+
+.active-dot {
+    background: var(--gold-light);
+
+    outline: 1px solid white;
+    outline-offset: 3px;
+}
+
+
+/* =====================================================
+   5. BANDEAU DES GRANDES MARQUES
+===================================================== */
+
+.brands {
+    background: #fff;
+
+    padding: 35px 5%;
+
+    border-bottom: 1px solid var(--border);
+
+    text-align: center;
+}
+
+.brand-list {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-around;
+
+    flex-wrap: wrap;
+
+    gap: 25px;
+}
+
+.brand-list span {
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: 25px;
+    font-weight: 600;
+
+    color: #27211c;
+
+    padding: 0 20px;
+
+    border-right: 1px solid var(--border);
+}
+
+.brand-list span:last-child {
+    border-right: none;
+}
+
+.brand-list span:nth-child(2) {
+    font-family: 'Montserrat', sans-serif;
+
+    font-size: 18px;
+    font-weight: 700;
+
+    letter-spacing: 2px;
+}
+
+.brand-list span:nth-child(3) {
+    font-size: 29px;
+}
+
+.brand-list span:nth-child(4) {
+    font-size: 19px;
+    letter-spacing: 1px;
+}
+
+.brand-list span:nth-child(5) {
+    font-size: 23px;
+}
+
+.brand-list span:nth-child(6) {
+    font-family: 'Montserrat', sans-serif;
+
+    font-size: 17px;
+    font-weight: 700;
+}
+
+
+/* =====================================================
+   6. SECTION COLLECTION
+===================================================== */
+
+.collection {
+    padding: 75px 5% 90px;
+    background: var(--ivory);
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.section-heading h2 {
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: 52px;
+    font-weight: 500;
+
+    margin-bottom: 12px;
+}
+
+.section-heading h2 em {
+    color: var(--gold);
+    font-weight: 500;
+}
+
+.section-heading > p:last-child {
+    font-size: 13px;
+    color: var(--muted);
+}
+
+
+/* =====================================================
+   7. GRILLE DES PRODUITS
+===================================================== */
+
+.product-grid {
+    display: grid;
+
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+
+    gap: 25px;
+}
+
+.product-card {
+    background: white;
+
+    border: 1px solid #eee8df;
+
+    overflow: hidden;
+
+    transition:
+        transform .35s ease,
+        box-shadow .35s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-8px);
+
+    box-shadow: 0 15px 35px rgba(42, 31, 19, .12);
+}
+
+
+/* Images des produits */
+
+.product-image {
+    height: 290px;
+
+    background: #f1eae0;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: transform .5s ease;
+}
+
+.product-card:hover .product-image img {
+    transform: scale(1.07);
+}
+
+
+/* Etiquettes des produits */
+
+.product-tag {
+    position: absolute;
+
+    top: 15px;
+    left: 15px;
+
+    background: var(--gold);
+
+    color: white;
+
+    padding: 7px 11px;
+
+    font-size: 9px;
+    font-weight: 600;
+
+    letter-spacing: 1px;
+}
+
+
+/* Favoris */
+
+.wishlist {
+    position: absolute;
+
+    top: 13px;
+    right: 15px;
+
+    background: rgba(255, 255, 255, .9);
+
+    border: none;
+
+    color: var(--gold);
+
+    font-size: 26px;
+
+    width: 36px;
+    height: 36px;
+
+    border-radius: 50%;
+
+    transition: all .3s ease;
+}
+
+.wishlist:hover {
+    background: var(--gold);
+    color: white;
+}
+
+
+/* Informations produit */
+
+.product-info {
+    padding: 20px 18px 22px;
+}
+
+.product-brand {
+    font-size: 10px;
+
+    letter-spacing: 2px;
+
+    color: var(--gold);
+
+    font-weight: 600;
+
+    margin-bottom: 8px;
+}
+
+.product-info h3 {
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: 23px;
+    font-weight: 600;
+
+    margin-bottom: 10px;
+}
+
+.product-price {
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: 23px;
+    font-weight: 700;
+
+    margin-bottom: 18px;
+}
+
+
+/* Bouton produit */
+
+.product-button {
+    width: 100%;
+
+    padding: 13px;
+
+    background: var(--dark);
+
+    color: white;
+
+    border: 1px solid var(--gold);
+
+    font-size: 10px;
+    letter-spacing: 1.2px;
+
+    transition: all .3s ease;
+}
+
+.product-button:hover {
+    background: var(--gold);
+}
+
+
+/* =====================================================
+   8. SECTION EDITORIALE
+===================================================== */
+
+.quote-section {
+    padding: 100px 20px;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            rgba(238, 230, 219, .88),
+            rgba(238, 230, 219, .88)
+        ),
+        url('https://images.unsplash.com/photo-1594035910387-fea47794261f?w=1600&auto=format&fit=crop&q=85');
+
+    background-position: center;
+    background-size: cover;
+}
+
+.quote-section h2 {
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: clamp(38px, 5vw, 60px);
+
+    line-height: 1.08;
+
+    font-weight: 500;
+
+    margin-bottom: 22px;
+}
+
+.quote-section h2 em {
+    color: var(--gold);
+}
+
+.quote-section > p:not(.eyebrow) {
+    color: var(--muted);
+
+    font-size: 13px;
+
+    margin-bottom: 30px;
+}
+
+
+/* =====================================================
+   9. SECTION PROMOTION
+===================================================== */
+
+.promotion {
+    background: var(--dark);
+
+    color: white;
+
+    padding: 75px 10%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 35px;
+}
+
+.promotion h2 {
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: 48px;
+
+    font-weight: 500;
+
+    line-height: 1.05;
+
+    margin-bottom: 18px;
+}
+
+.promotion > div > p:last-child {
+    max-width: 480px;
+
+    color: #c9bfb3;
+
+    line-height: 1.8;
+
+    font-size: 13px;
+}
+
+
+/* =====================================================
+   10. PIED DE PAGE
+===================================================== */
+
+.footer {
+    background: #100e0c;
+
+    color: white;
+
+    text-align: center;
+
+    padding: 55px 20px 25px;
+}
+
+.footer-brand {
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: 34px;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 10px;
+}
+
+.footer-brand span {
+    color: var(--gold-light);
+}
+
+.footer > p {
+    color: #b7aa9a;
+
+    font-size: 12px;
+}
+
+.footer-links {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 30px;
+
+    margin: 28px 0;
+
+    flex-wrap: wrap;
+}
+
+.footer-links a {
+    color: #e8dfd2;
+
+    font-size: 12px;
+
+    transition: color .3s ease;
+}
+
+.footer-links a:hover {
+    color: var(--gold-light);
+}
+
+.copyright {
+    border-top: 1px solid #3a3026;
+
+    padding-top: 22px;
+
+    margin-top: 22px;
+}
+
+
+/* =====================================================
+   11. ANIMATIONS
+===================================================== */
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero-content {
+    animation: fadeInUp 1s ease both;
+}
+
+.product-card {
+    animation: fadeInUp .8s ease both;
+}
+
+.product-card:nth-child(2) {
+    animation-delay: .1s;
+}
+
+.product-card:nth-child(3) {
+    animation-delay: .2s;
+}
+
+.product-card:nth-child(4) {
+    animation-delay: .3s;
+}
+
+
+/* =====================================================
+   12. RESPONSIVE TABLETTES
+===================================================== */
+
+@media (max-width: 1050px) {
+
+    .header {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .navigation {
+        gap: 22px;
+        flex-wrap: wrap;
+    }
+
+    .product-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .hero-content {
+        margin-left: 9%;
+    }
+
+    .brand-list {
+        gap: 20px;
+    }
+
+}
+
+
+/* =====================================================
+   13. RESPONSIVE TELEPHONES
+===================================================== */
+
+@media (max-width: 650px) {
+
+    .top-bar {
+        flex-direction: column;
+
+        gap: 8px;
+
+        font-size: 13px;
+
+        text-align: center;
+    }
+
+    .top-bar span:nth-child(2),
+    .top-bar span:nth-child(3) {
+        display: none;
+    }
+
+    .header {
+        padding: 18px 15px;
+
+        gap: 18px;
+    }
+
+    .brand-monogram {
+        width: 53px;
+        height: 53px;
+
+        font-size: 27px;
+    }
+
+    .brand-name {
+        font-size: 19px;
+    }
+
+    .navigation {
+        width: 100%;
+
+        gap: 15px;
+
+        flex-wrap: wrap;
+    }
+
+    .navigation a {
+        font-size: 16px;
+    }
+
+    .header-icons {
+        gap: 20px;
+    }
+
+    .hero {
+        min-height: 480px;
+
+        background-position: 62% center;
+    }
+
+    .hero-content {
+        margin: 0 8%;
+    }
+
+    .hero h1 {
+        font-size: 67px;
+    }
+
+    .hero-description {
+        font-size: 20px;
+    }
+
+    .hero-caption {
+        left: 8%;
+        right: 8%;
+
+        font-size: 8px;
+    }
+
+    .brand-list {
+        gap: 18px;
+    }
+
+    .brand-list span {
+        font-size: 19px;
+
+        border: none;
+    }
+
+    .collection {
+        padding: 55px 5%;
+    }
+
+    .section-heading h2 {
+        font-size: 40px;
+    }
+
+    .product-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        gap: 13px;
+    }
+
+    .product-image {
+        height: 190px;
+    }
+
+    .product-info {
+        padding: 13px;
+    }
+
+    .product-info h3 {
+        font-size: 18px;
+    }
+
+    .product-price {
+        font-size: 19px;
+    }
+
+    .product-tag {
+        font-size: 8px;
+
+        top: 8px;
+        left: 8px;
+    }
+
+    .product-button {
+        font-size: 9px;
+        padding: 11px 5px;
+    }
+
+    .promotion {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        padding: 55px 8%;
+    }
+
+    .promotion h2 {
+        font-size: 39px;
+    }
+
+    .quote-section {
+        padding: 70px 20px;
+    }
+
+    .footer-links {
+        gap: 17px;
+    }
+
+}
+
+
+/* =====================================================
+   14. PETITS ECRANS
+===================================================== */
+
+@media (max-width: 380px) {
+
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .product-image {
+        height: 260px;
+    }
+
+    .navigation {
+        gap: 10px;
+    }
+
+    .navigation a {
+        font-size: 14px;
+    }
+
+    .brand-name {
+        font-size: 17px;
+    }
+
+}
+
+
+/* =====================================================
+   15. AJUSTEMENT IMAGE 4 : GIORGIO ARMANI SÌ
+   Affiche la bouteille entière sans modifier les autres images
+===================================================== */
+
+.product-card:nth-child(4) .product-image {
+    background: #f8f5ef;
+}
+
+.product-card:nth-child(4) .product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    padding: 12px;
+}
+
+
+/* =====================================================
+   16. FORMULAIRE DE PARTICIPATION
+   Formulaire de simulation pédagogique
+===================================================== */
+
+#participation {
+    padding: 85px 5%;
+    background: #fff;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+}
+
+#participation .section-heading {
+    max-width: 720px;
+    margin: 0 auto 35px;
+}
+
+#participation form,
+#participation .participation-form {
+    width: min(100%, 560px);
+    margin: 0 auto;
+    padding: 38px;
+    background: var(--ivory);
+    border: 1px solid var(--border);
+    box-shadow: 0 14px 38px rgba(42, 31, 19, .07);
+}
+
+#participation label {
+    display: block;
+    margin-bottom: 10px;
+    color: var(--text);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: .5px;
+}
+
+#participation input[type="text"],
+#participation input:not([type]) {
+    display: block;
+    width: 100%;
+    min-height: 50px;
+    margin-bottom: 20px;
+    padding: 14px 16px;
+    background: #fff;
+    color: var(--text);
+    border: 1px solid var(--border);
+    border-radius: 0;
+    outline: none;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    transition: border-color .25s ease, box-shadow .25s ease;
+}
+
+#participation input[type="text"]:focus,
+#participation input:not([type]):focus {
+    border-color: var(--gold);
+    box-shadow: 0 0 0 3px rgba(177, 138, 70, .12);
+}
+
+#participation input::placeholder {
+    color: #a69a8c;
+}
+
+#participation button[type="submit"] {
+    display: inline-flex;
+    width: 100%;
+    min-height: 50px;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 22px;
+    background: linear-gradient(120deg, #a47c36, #d0ad69, #9c7130);
+    color: #fff;
+    border: 1px solid var(--gold-light);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1.3px;
+    transition: transform .3s ease, box-shadow .3s ease, filter .3s ease;
+}
+
+#participation button[type="submit"]:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 22px rgba(0, 0, 0, .14);
+    filter: brightness(1.06);
+}
+
+#participation button[type="submit"]:disabled {
+    opacity: .65;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+#formMessage {
+    min-height: 20px;
+    margin-top: 16px;
+    font-size: 12px;
+    line-height: 1.6;
+    text-align: center;
+}
+
+#formMessage.success {
+    color: #39734b;
+}
+
+#formMessage.error {
+    color: #a33b32;
+}
+
+/* Adaptation du formulaire sur téléphone */
+@media (max-width: 650px) {
+    #participation {
+        padding: 60px 5%;
+    }
+
+    #participation form,
+    #participation .participation-form {
+        padding: 25px 20px;
+    }
+
+    #participation .section-heading h2 {
+        font-size: 38px;
+    }
+}
+
+@media (max-width: 380px) {
+    #participation form,
+    #participation .participation-form {
+        padding: 22px 16px;
+    }
+}
