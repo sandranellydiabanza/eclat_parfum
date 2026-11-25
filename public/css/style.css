@@ -1156,6 +1156,12 @@ button {
     box-shadow: 0 14px 38px rgba(42, 31, 19, .07);
 }
 
+/* Espacement entre les trois champs */
+
+#participation .form-group {
+    margin-bottom: 22px;
+}
+
 #participation label {
     display: block;
     margin-bottom: 10px;
@@ -1165,12 +1171,15 @@ button {
     letter-spacing: .5px;
 }
 
+/* Style commun aux champs texte et e-mail */
+
 #participation input[type="text"],
+#participation input[type="email"],
 #participation input:not([type]) {
     display: block;
     width: 100%;
     min-height: 50px;
-    margin-bottom: 20px;
+    margin-bottom: 0;
     padding: 14px 16px;
     background: #fff;
     color: var(--text);
@@ -1182,15 +1191,22 @@ button {
     transition: border-color .25s ease, box-shadow .25s ease;
 }
 
+/* Effet au clic dans un champ */
+
 #participation input[type="text"]:focus,
+#participation input[type="email"]:focus,
 #participation input:not([type]):focus {
     border-color: var(--gold);
     box-shadow: 0 0 0 3px rgba(177, 138, 70, .12);
 }
 
+/* Texte indicatif */
+
 #participation input::placeholder {
     color: #a69a8c;
 }
+
+/* Bouton du formulaire */
 
 #participation button[type="submit"] {
     display: inline-flex;
@@ -1222,6 +1238,8 @@ button {
     box-shadow: none;
 }
 
+/* Message de retour */
+
 #formMessage {
     min-height: 20px;
     margin-top: 16px;
@@ -1238,8 +1256,13 @@ button {
     color: #a33b32;
 }
 
-/* Adaptation du formulaire sur téléphone */
+
+/* =====================================================
+   17. ADAPTATION DU FORMULAIRE SUR TELEPHONE
+===================================================== */
+
 @media (max-width: 650px) {
+
     #participation {
         padding: 60px 5%;
     }
@@ -1252,11 +1275,183 @@ button {
     #participation .section-heading h2 {
         font-size: 38px;
     }
+
+    #participation .form-group {
+        margin-bottom: 18px;
+    }
+
 }
 
 @media (max-width: 380px) {
+
     #participation form,
     #participation .participation-form {
         padding: 22px 16px;
+    }
+
+}
+
+/* ==========================================
+   PANIER ÉCLAT PARFUMS
+========================================== */
+
+.cart-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.cart-modal.open {
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.cart-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.cart-modal.open .cart-overlay {
+    opacity: 1;
+}
+
+.cart-panel {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: min(440px, 100%);
+    height: 100%;
+    background: #f8f5ef;
+    color: #2b241e;
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    overflow-y: auto;
+}
+
+.cart-modal.open .cart-panel {
+    transform: translateX(0);
+}
+
+.cart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #e6ded2;
+    padding-bottom: 18px;
+}
+
+.cart-header h2 {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 30px;
+}
+
+.cart-header button {
+    border: none;
+    background: transparent;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.cart-items {
+    flex: 1;
+    padding: 20px 0;
+}
+
+.empty-cart {
+    text-align: center;
+    color: #82776b;
+    padding: 40px 0;
+}
+
+.cart-item {
+    padding: 18px 0;
+    border-bottom: 1px solid #e6ded2;
+}
+
+.cart-item-info {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 15px;
+}
+
+.cart-item-info strong {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 20px;
+}
+
+.cart-item-info span {
+    color: #a17a39;
+    font-weight: 600;
+}
+
+.cart-item-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.cart-item-actions button {
+    border: 1px solid #d9bc7e;
+    background: white;
+    padding: 6px 12px;
+    cursor: pointer;
+}
+
+.cart-item-actions .remove-item {
+    color: #a33a32;
+    border-color: #a33a32;
+}
+
+.cart-footer {
+    border-top: 1px solid #e6ded2;
+    padding-top: 20px;
+}
+
+.cart-total {
+    display: flex;
+    justify-content: space-between;
+    font-size: 19px;
+    margin-bottom: 20px;
+}
+
+.cart-total strong {
+    color: #a17a39;
+}
+
+.cart-footer .gold-button {
+    width: 100%;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.cart-footer .gold-button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.demo-notice {
+    text-align: center;
+    font-size: 12px;
+    color: #82776b;
+    margin-top: 15px;
+}
+
+body.cart-open {
+    overflow: hidden;
+}
+
+@media (max-width: 480px) {
+    .cart-panel {
+        padding: 20px;
     }
 }
