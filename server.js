@@ -13,16 +13,22 @@ const PORT = process.env.PORT || 3000;
 // 1. CONNEXION À MYSQL
 // =====================================================
 
+
 const db = mysql.createPool({
     host: process.env.DB_HOST || "localhost",
     user: process.env.DB_USER || "root",
     password: process.env.DB_PASSWORD || "",
     database: process.env.DB_NAME || process.env.NOM_DB || "eclat_parfums_db",
     port: Number(process.env.DB_PORT) || 3306,
+
+    // Connexion sécurisée exigée par Enzonic
+    ssl: {},
+
     waitForConnections: true,
     connectionLimit: 10,
     queueLimit: 0
 });
+
 
 // =====================================================
 // 2. CATALOGUE DES PRODUITS
